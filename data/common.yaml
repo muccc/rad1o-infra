@@ -2,7 +2,7 @@ profile::nginx::vhosts:
   rad1o:
     ensure: present
     server_name:
-      - rad1o.de
+      - ~^(www\.)?rad1o\.de$
       - rad1o.badge.events.ccc.de
     www_root: /var/www/rad1o/current
     try_files:
