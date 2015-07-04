@@ -28,3 +28,6 @@ profile::nginx::locations:
       - ^/_detail/(.*) /lib/exe/detail.php?media=$1 last
       - ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last
       - ^/_media/(.*) /lib/exe/fetch.php?media=$1 last
+
+postfix::server::relayhost: zonk.muc.ccc.de
+postfix::server::myhostname: rad1o.badge.events.ccc.de

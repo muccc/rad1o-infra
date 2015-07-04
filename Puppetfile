@@ -7,3 +7,4 @@ mod 'puppetlabs/firewall',    '1.4.0'
 
 mod 'jfryman/nginx',          '0.2.7'
 mod 'mayflower/php',          '3.2.2'
+mod 'thias/postfix',          '0.3.3'
