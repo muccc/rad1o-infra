@@ -31,3 +31,9 @@ profile::nginx::locations:
 
 postfix::server::relayhost: zonk.muc.ccc.de
 postfix::server::myhostname: rad1o.badge.events.ccc.de
+
+php::settings:
+  PHP/upload_max_filesize: 20M
+  PHP/post_max_size: 20M
+
+nginx::client_max_body_size: 20M
