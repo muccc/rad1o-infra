@@ -9,6 +9,11 @@ profile::nginx::vhosts:
       - $uri $uri/ @rewrites
     index_files:
       - doku.php
+    ssl: true
+    ssl_cert: /etc/ssl/certs/rad1o.crt
+    ssl_key: /etc/ssl/private/rad1o.key
+    ssl_dhparam: /etc/nginx/ssl/dhparams.pem
+    rewrite_to_https: true
 
 profile::nginx::locations:
   rad1o_php:
@@ -18,6 +23,7 @@ profile::nginx::locations:
     try_files:
       - $uri =404
     fastcgi: 127.0.0.1:9000
+    ssl: true
 
   rad1o_rewrites:
     vhost: rad1o
@@ -28,6 +34,7 @@ profile::nginx::locations:
       - ^/_detail/(.*) /lib/exe/detail.php?media=$1 last
       - ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last
       - ^/_media/(.*) /lib/exe/fetch.php?media=$1 last
+    ssl: true
 
 postfix::server::relayhost: zonk.muc.ccc.de
 postfix::server::myhostname: rad1o.badge.events.ccc.de
