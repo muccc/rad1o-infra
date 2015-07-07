@@ -43,4 +43,7 @@ php::settings:
   PHP/upload_max_filesize: 20M
   PHP/post_max_size: 20M
 
+php::extensions:
+  gd: {}
+
 nginx::client_max_body_size: 20M
